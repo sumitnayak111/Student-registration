@@ -1,0 +1,15 @@
+services:
+  student-app:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+
+    container_name: student-login-app
+
+    ports:
+      - "3001:3000"
+
+    volumes:
+      - ./server/student.json:/app/server/student.json
+
+    restart: unless-stopped
